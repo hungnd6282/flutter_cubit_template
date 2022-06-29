@@ -20,4 +20,4 @@ samples, guidance on mobile development, and a full API reference.
 # fluttergen
 
 fluttergen -c pubspec.yaml
-
+https://blog.logrocket.com/using-fluttergen-code-generator-flutter/
