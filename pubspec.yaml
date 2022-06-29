@@ -63,6 +63,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_native_splash: ^2.1.1
+  build_runner:
+  flutter_gen:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter.
@@ -72,6 +74,14 @@ flutter_native_splash:
     image: assets/images/welcome.png
     android: true
     ios: true
+
+flutter_gen:
+  output: lib/gen/
+  integrations:
+    flutter_svg: true
+
+  assets:
+    enabled: true
 
 flutter:
 

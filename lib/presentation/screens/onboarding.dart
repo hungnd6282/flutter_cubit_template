@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
@@ -10,6 +11,7 @@ import '../../presentation/widgets/onboarding_item.dart';
 import '../../shared/constants/consts_variables.dart';
 import '../../shared/constants/strings.dart';
 import '../../shared/styles/colors.dart';
+import '../../gen/assets.gen.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({Key? key}) : super(key: key);
@@ -33,6 +35,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
     super.dispose();
   }
 
+  Widget build2(BuildContext context) {
+    return Assets.images.welcome.image();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,13 +49,15 @@ class _OnboardingPageState extends State<OnboardingPage> {
           OnboardingCubit cubit = BlocProvider.of(context);
           return SafeArea(
               child: Column(
+            mainAxisSize: MainAxisSize.max,
             children: [
               Stack(
                 alignment: Alignment.topCenter,
+                fit: StackFit.passthrough,
                 children: [
                   Container(
                       width: 100.w,
-                      height: 95.h,
+                      height: 90.h,
                       color: Colors.deepPurple,
                       child: Padding(
                         padding: EdgeInsets.symmetric(
@@ -88,9 +96,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                   ),
                                 ),
                                 CustomDots(myindex: cubit.curruntindext),
-                                SizedBox(
-                                  width: 10.w,
-                                )
+                                // SizedBox(
+                                //   width: 10.w,
+                                // )
                               ],
                             )
                           ],
